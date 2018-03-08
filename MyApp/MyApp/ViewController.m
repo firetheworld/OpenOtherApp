@@ -28,9 +28,15 @@
 	//创建一个url，这个url就是WXApp的url，记得加上：//
 	NSURL *url = [NSURL URLWithString:@"weixin://"];
 	
+	NSDictionary *dic = @{@"string":@"This is param1",
+						  @"array":@[@1,@2]
+						  };
 	//打开url
-	[[UIApplication sharedApplication] openURL:url];
+	[[UIApplication sharedApplication] openURL:url options:dic completionHandler:^(BOOL success) {
+		//
+	}];
 }
 
 
 @end
+
